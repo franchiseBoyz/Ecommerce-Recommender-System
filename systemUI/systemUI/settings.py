@@ -52,6 +52,9 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'systemUI.urls'
 
+LOGIN_REDIRECT_URL = 'home'  # Redirect to home after login
+LOGOUT_REDIRECT_URL = 'home'  # Redirect to home after logout
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
