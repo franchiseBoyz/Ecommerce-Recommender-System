@@ -12,7 +12,6 @@ class Product(models.Model):
     seller_rating = models.FloatField()
     price_ratio = models.FloatField()
     price_difference = models.FloatField()
-    product_id = models.IntegerField(unique=True)
 
     def __str__(self):
         return self.title

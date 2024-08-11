@@ -63,10 +63,17 @@
 
 <body>
     <h1>Welcome to the Product Search</h1>
-    <form method="GET" action="{% url 'search' %}">
+    <form method="GET" action="{% url 'recommendations' %}">
         <input type="text" name="q" placeholder="Search for products...">
         <button type="submit">Search</button>
     </form>
+
+    <h1>Top Rated Products</h1>
+    <ul>
+        {% for product in top_rated_products %}
+            <li>{{ product.title }} - Rating: {{ product.product_rating }} - Price: {{ product.selling_price }} KSH</li>
+        {% endfor %}
+    </ul>
 </body>
 
 
