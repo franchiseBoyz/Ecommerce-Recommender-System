@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Search Results for "{{ query }}"</h1>
+        
+        {% if recommendations %}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th scope="col">Title</th>
+                        <th scope="col">Rating</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for product in recommendations %}
+                        <tr>
+                            <td>{{ product.title }}</td>
+                            <td>{{ product.product_rating }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No products found matching your query.</p>
+        {% endif %}
+        
+        <a href="{% url 'home' %}" class="btn btn-primary mt-4">Go Back</a>
+    </div>
+</body>
+</html>
