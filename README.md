@@ -1,9 +1,9 @@
 <!-- #region -->
 # Ecommerce Recommender System
-A recommendation system that gives users suggestions that best match their specs, enhancing online shopping by simplifying decisions and boosting customer satisfaction.
+A recommendation system that gives users suggestions that best match user specs, enhancing online shopping by simplifying decisions and boosting customer satisfaction.
 
 <p>
-    <img src="Data/images/readme_banner.jpg" alt="Banner Image"/>
+    <img src="Images/WhatsApp Image 2024-08-13 at 3.45.03 PM.jpeg" alt="readme Image"/>
 </p>
 <p align="center">
     <img src="https://img.shields.io/badge/-scikit--learn-F7931E?logo=scikit-learn&logoColor=white&style=flat-square">
