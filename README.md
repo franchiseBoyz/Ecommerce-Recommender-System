@@ -85,24 +85,22 @@ Some of the plots we came up with are shown below:
 <p align='center'>
     <img src="Images/Screenshot 2024-08-13 145700.jpg" alt="Distribution of categories"/>
     <img src="Images/Screenshot 2024-08-13 145751.jpg" alt="top 20 most rated category"/>
-    <img src="Images/Screenshot 2024-08-13 145751.jpg" alt="top 20 most rated category"/>
+    <img src="Images/Screenshot 2024-08-13 145828.jpg" alt="price distribution in each category"/>
 </p> 
 
 ## Modelling 
 
 We built multiple models powered by different algorithms.
 These include:
-* `NMF` 
-* `Memory Based`
+* `SVDpp`
 * `SVD`
 * `KNNwithMean`
-* `Baseline Model`
-* `KNNBasic`
+* `Baseline Model(KNNBasic)`
 
-The best performing ones were tuned and ensembled to produce one model however this did not exhibit better performance with 
+The best performing ones were tuned and ensembled to produce one model however this did not exhibit better performance. Further scaling of the dataset was done and cross validation included to improve the accuracy score  
 ## Deployment
 
-Included in the repository is a streamlit user interface that serves as the rudimentary method through which users shall interact with our model.
+Included in the repository is a django user interface that serves as the rudimentary method through which users shall interact with our model. The interface was 
 
 ## Additional Documentation
 
