@@ -8,7 +8,7 @@ A recommendation system that gives users suggestions that best match their specs
 <p align="center">
     <img src="https://img.shields.io/badge/-scikit--learn-F7931E?logo=scikit-learn&logoColor=white&style=flat-square">
     <img src="https://img.shields.io/badge/-Surprise-4B0082?logo=python&logoColor=white&style=flat-square">
-    <img src="https://img.shields.io/badge/-Verce-FF4B4B?logo=verce&logoColor=white&style=flat-square">
+    <img src="https://img.shields.io/badge/-Vercel-FF4B4B?logo=vercel&logoColor=white&style=flat-square">
     <img src="https://img.shields.io/badge/-Pandas-150458?logo=pandas&logoColor=white&style=flat-square">
     <img src="https://img.shields.io/badge/-NumPy-013243?logo=numpy&logoColor=white&style=flat-square">
     <img src="https://img.shields.io/badge/-NLTK-4EA94B?logo=python&logoColor=white&style=flat-square">
