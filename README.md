@@ -77,15 +77,16 @@ Here's a breakdown of some of the main columns we used in coming up with recomme
 
 There were a lot more columns in the data we scraped such as `sellername`, `sellerreting` and `highlights` that were dropped.
 We also conducted feature engineering on some columns to capture more information. All this is well documented in the included project [**writeup**](./writeup.docx).
-<!--
+
 ## EDA
 
 We conducted some EDA that yielded us some domain knowledge we could use to inform future steps and modelling
 Some of the plots we came up with are shown below: 
 <p align='center'>
-    <img src="Data/images/Columnstoplot.png" alt="columns plot"/>
-    <img src="Data/images/top_10_subcategories_individually.png" alt="top_10_subcategories_individually"/>
-</p> -->
+    <img src="Images/Screenshot 2024-08-13 145700.jpg" alt="Distribution of categories"/>
+    <img src="Images/Screenshot 2024-08-13 145751.jpg" alt="top 20 most rated category"/>
+    <img src="Images/Screenshot 2024-08-13 145751.jpg" alt="top 20 most rated category"/>
+</p> 
 
 ## Modelling 
 
