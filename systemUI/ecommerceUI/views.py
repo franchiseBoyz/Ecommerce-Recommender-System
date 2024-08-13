@@ -25,6 +25,7 @@ def load_products():
                 'seller_rating': row['seller_rating'],
                 'price_ratio': row['price_ratio'],
                 'price_difference': row['price_difference'],
+                'ID': row['ID'],
             }
         )
 
