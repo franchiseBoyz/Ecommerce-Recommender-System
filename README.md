@@ -8,11 +8,13 @@ A recommendation system that gives users suggestions that best match their specs
 <p align="center">
     <img src="https://img.shields.io/badge/-scikit--learn-F7931E?logo=scikit-learn&logoColor=white&style=flat-square">
     <img src="https://img.shields.io/badge/-Surprise-4B0082?logo=python&logoColor=white&style=flat-square">
+    <img src="https://img.shields.io/badge/-Verce-FF4B4B?logo=verce&logoColor=white&style=flat-square">
     <img src="https://img.shields.io/badge/-Pandas-150458?logo=pandas&logoColor=white&style=flat-square">
     <img src="https://img.shields.io/badge/-NumPy-013243?logo=numpy&logoColor=white&style=flat-square">
     <img src="https://img.shields.io/badge/-NLTK-4EA94B?logo=python&logoColor=white&style=flat-square">
     <img src="https://img.shields.io/badge/-Seaborn-3776AB?logo=python&logoColor=white&style=flat-square">
     <img src="https://img.shields.io/badge/-Plotly-3F4F75?logo=plotly&logoColor=white&style=flat-square">
+    <img src="https://img.shields.io/badge/-Django-3F4F75?logo=django&logoColor=white&style=flat-square">
 </p>
 
 #### Authors
@@ -28,7 +30,7 @@ The project aims to develop a chatbot that provides personalized product recomme
 
 ## Objective
 
-The goal is to bDevelop a recommendation system that provides accurate and relevant personalized product suggestions based on user specs, enhancing online shopping by simplifying decisions and boosting customer satisfaction. The model will help users make informed decisions when selecting products by considering their preferences and constraints.
+The goal is to Develop a recommendation system that provides accurate and relevant personalized product suggestions based on user specs, enhancing online shopping by simplifying decisions and boosting customer satisfaction. The model will help users make informed decisions when selecting products by considering their preferences and constraints.
 
 ## Project Overview
 
@@ -50,16 +52,7 @@ This project followed the CRISP-DM process. The CRISP-DM process is a data minin
     pip install -r requirements.txt
     ```
 
-* Install Streamlit:
 
-    ```
-    pip install streamlit
-    ```
-
-* To run the app locally run the following on terminal:
-    ```
-    streamlit run deployment/africura_final.py
-    ```
 ## Our Data
 
 We sourced data by scraping destination review data from **Flipkart** using a popular web scraping tool, [Scrapy](https://www.flipkart.com) 
@@ -75,7 +68,7 @@ Here's a breakdown of some of the main columns we used in coming up with recomme
 * `selling_price`: the retail selling price of the product.
 
 
-There were a lot more columns in the data we scraped such as `sellername`, `sellerreting` and `highlights` that were dropped.
+There were a lot more columns in the data we scraped such as `sellername`, `sellerrating` and `highlights` that were dropped.
 We also conducted feature engineering on some columns to capture more information. All this is well documented in the included project [**writeup**](./writeup.docx).
 
 ## EDA
@@ -100,7 +93,7 @@ These include:
 The best performing ones were tuned and ensembled to produce one model however this did not exhibit better performance. Further scaling of the dataset was done and cross validation included to improve the accuracy score  
 ## Deployment
 
-Included in the repository is a django user interface that serves as the rudimentary method through which users shall interact with our model. The interface was 
+Included in the repository is a django user interface that serves as the rudimentary method through which users shall interact with our model. The interface was further deployed using **Vercel**
 
 ## Additional Documentation
 
