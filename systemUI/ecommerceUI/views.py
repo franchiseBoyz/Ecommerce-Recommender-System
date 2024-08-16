@@ -33,7 +33,7 @@ def load_products():
 def create_recommendation_model():
     # Load all products into a DataFrame
     df = pd.DataFrame(list(Product.objects.all().values(
-        'ID', 'category_1', 'category_2', 'category_3', 'title', 'product_rating', 
+        'category_1', 'category_2', 'category_3', 'title', 'product_rating', 
         'selling_price', 'mrp', 'seller_name', 'seller_rating', 
         'price_ratio', 'price_difference'
     )))
@@ -90,5 +90,5 @@ def search_view(request):
 
 # Home view to display top-rated products
 def home(request):
-    top_rated_products = Product.objects.order_by('-product_rating')[:10]  # Fetch top 10 rated products
+    top_rated_products = Product.objects.order_by('-product_rating')[:12]  # Fetch top 10 rated products
     return render(request, 'products/home.html', {'top_rated_products': top_rated_products})
