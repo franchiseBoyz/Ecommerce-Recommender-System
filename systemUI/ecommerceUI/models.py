@@ -1,8 +1,6 @@
 from django.db import models
 
 class Product(models.Model):
-    
-    id = models.AutoField(primary_key=True)
     category_1 = models.CharField(max_length=255)
     category_2 = models.CharField(max_length=255)
     category_3 = models.CharField(max_length=255)
