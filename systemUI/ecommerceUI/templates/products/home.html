@@ -7,28 +7,101 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
-        }
+        /* Navbar styling */
         .navbar {
+            background-color: #343a40; /* Dark background color */
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 1rem; /* Added padding for better spacing */
         }
+
         .navbar-brand {
             font-weight: bold;
+            color: #ffffff; /* White color for the brand */
+            font-size: 1.5rem; /* Larger font size */
         }
+
+        .navbar-brand:hover {
+            color: #f8f9fa; /* Slight color change on hover */
+        }
+
         .navbar-nav .nav-link {
-            color: #555;
+            color: #ffffff; /* White color for links */
+            font-size: 1.1rem; /* Slightly larger font size */
+            margin-left: 1rem; /* Space between links */
         }
+
         .navbar-nav .nav-link:hover {
-            color: #ff6f61;
+            color: #007bff; /* Blue color on hover */
+            text-decoration: underline; /* Underline on hover */
         }
+
+        .navbar-toggler {
+            border: none; /* Remove border from toggler */
+        }
+
+        .navbar-toggler-icon {
+            color: #ffffff; /* White icon color */
+        }
+
+        /* Active state for nav-link */
+        .navbar-nav .nav-item.active .nav-link {
+            color: #007bff; /* Highlight active link */
+        }
+
+        /* Additional responsive styling */
+        @media (max-width: 991.98px) {
+            .navbar {
+                padding: 0.75rem; /* Adjust padding on smaller screens */
+            }
+
+            .navbar-brand {
+                font-size: 1.25rem; /* Adjust font size on smaller screens */
+            }
+
+            .navbar-nav .nav-link {
+                font-size: 1rem; /* Adjust link size on smaller screens */
+                margin-left: 0; /* Remove margin on smaller screens */
+                padding: 0.5rem 1rem; /* Add padding to links */
+            }
+        }
+
+        /* Set the height of the carousel */
+        #carouselExampleControls {
+            max-height: 300px; /* Adjust this value as needed */
+            overflow: hidden;
+        }
+
+        /* Set the height of the video */
+        .carousel-inner {
+            height: 100%;
+        }
+
+        .carousel-item video {
+            height: auto;
+            width: auto; /* Maintain aspect ratio */
+            object-fit: cover; /* Cover the container */
+        }
+
+        .video-background {
+            width: 100%;
+            height: 400px; /* Set the height of the video here */
+            object-fit: cover; /* Ensure the video covers the entire container */
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #343a40;
+            font-family: Arial, sans-serif;
+        }
+
         .container {
             margin-top: 50px;
         }
+
         .form-group {
             margin-bottom: 1rem;
         }
+
         .form-group input[type="text"] {
             width: calc(100% - 90px);
             display: inline-block;
@@ -37,10 +110,11 @@
             padding: .375rem .75rem;
             font-size: 1rem;
         }
+
         .form-group button {
             width: 80px;
             display: inline-block;
-            background-color: #ff6f61;
+            background-color: #007bff;
             border: none;
             border-radius: .25rem;
             color: #fff;
@@ -48,58 +122,76 @@
             font-size: 1rem;
             cursor: pointer;
         }
+
         .form-group button:hover {
-            background-color: #e55b50;
+            background-color: #0056b3;
         }
+
         h1 {
             margin-bottom: 1.5rem;
             font-size: 2rem;
-            color: #333;
+            color: #343a40;
         }
-        .product-grid {
+
+        .horizontal-scroll {
             display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
+            flex-direction: column; /* Arrange items vertically */
+            padding: 1rem 0;
         }
+
+        .horizontal-scroll .product-card {
+            width: 100%; /* Full width for one item per line */
+            margin-bottom: 1rem; /* Space between items */
+            flex-shrink: 0; /* Prevent shrinking */
+        }
+
         .product-card {
-            border: 1px solid #e0e0e0;
+            border: 1px solid #ced4da;
             border-radius: .25rem;
             overflow: hidden;
             box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: #fff;
-            width: 30%;
+            background-color: #ffffff;
             text-align: center;
         }
+
         .product-card img {
             width: 100%;
             height: auto;
         }
+
         .product-card .card-body {
             padding: 1rem;
         }
+
         .product-card .card-title {
             font-size: 1.25rem;
             margin-bottom: .5rem;
         }
+
         .product-card .card-text {
             font-size: 1rem;
             margin-bottom: .5rem;
         }
+
         .footer {
-            background-color: #343a40;
+            background-color: #f1f1f1;
             padding: 20px 0;
-            color: #fff;
+            color: #343a40;
         }
+
         .footer a {
-            color: #fff;
+            color: #343a40;
             text-decoration: none;
         }
+
         .footer a:hover {
             text-decoration: underline;
         }
+
         .footer .container {
             max-width: 1140px;
         }
+
         .footer address {
             line-height: 1.6;
         }
@@ -108,24 +200,28 @@
 <body>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">E-commerce Recommender</a>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Sign Out</a>
-                    </li>
-                {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'login' %}">Sign In</a>
-                    </li>
-                {% endif %}
-            </ul>
-        </div>
+<nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand mx-auto" href="#">Ecommerce Recommendation System</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}"><i class="fas fa-sign-out-alt"></i> Sign Out</a>
+            </li>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}"><i class="fas fa-sign-in-alt"></i> Sign In</a>
+            </li>
+        {% endif %}
+      </ul>
     </div>
 </nav>
+
+<!-- Video Carousel -->
+
 
 <!-- Main Content -->
 <div class="container">
@@ -136,7 +232,7 @@
     </form>
 
     <h1>Top Rated Products</h1>
-    <div class="product-grid">
+    <div class="horizontal-scroll">
         {% for product in top_rated_products %}
             <div class="product-card">
                 <img src="{{ product.image_url }}" alt="{{ product.title }}">
@@ -171,25 +267,18 @@
                 <h5>Support</h5>
                 <ul class="list-unstyled">
                     <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Help Center</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                 </ul>
             </div>
             <div class="col-md-3 col-sm-6">
                 <h5>Contact Us</h5>
                 <address>
-                    <strong>Company Name</strong><br>
-                    123 Street, City<br>
-                    Country<br>
-                    <i class="fas fa-phone"></i> Phone: +1234567890<br>
-                    <i class="fas fa-envelope"></i> Email: info@example.com
+                    123 Street Name<br>
+                    City, Country<br>
+                    Phone: (123) 456-7890<br>
+                    Email: info@example.com
                 </address>
-            </div>
-        </div>
-        <div class="row mt-3">
-            <div class="col-md-12">
-                <hr class="bg-light">
-                <p class="text-center">© 2024 Ecommerce Recommendation System. All Rights Reserved.</p>
             </div>
         </div>
     </div>
