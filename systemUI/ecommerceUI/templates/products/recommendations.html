@@ -4,22 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Recommendations</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <h1>Recommended Products</h1>
-    {% if recommendations %}
-        <ul>
-            {% for product in recommendations %}
-                <li>
-                    <strong>{{ product.title }}</strong><br>
-                    Rating: {{ product.product_rating }}<br>
-                    Price: {{ product.selling_price }}<br>
-                    ID: {{ product.ID }}
-                </li>
-            {% endfor %}
-        </ul>
-    {% else %}
-        <p>No products found.</p>
-    {% endif %}
+    <header>
+        <h1>Recommended Products</h1>
+        <a href="{% url 'home' %}" class="back-button">Back to Home</a>
+    </header>
+
+    <main>
+        {% if recommendations %}
+            <ul class="recommendations-list">
+                {% for item in recommendations %}
+                    <li class="recommendation-item">
+                        <img src="{{ item.thumbnail_url }}" alt="{{ item.title }}" class="product-image">
+                        <div class="product-info">
+                            <h2>{{ item.title }}</h2>
+                            <p>Rating: {{ item.product_rating }}</p>
+                            <p>Selling Price: KSH {{ item.selling_price }}</p>
+                        </div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No recommendations found.</p>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>&copy; {{ current_year }} Your Company Name</p>
+    </footer>
 </body>
 </html>
