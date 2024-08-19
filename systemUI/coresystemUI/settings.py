@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-j8i3^z-0sn%(n_)*snu1#71+i46q-imeoy)@f#(rbbnb*5fjo)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.vercel.app']
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -50,7 +50,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'coresystemUI.urls'
+ROOT_URLCONF = 'systemUI.urls'
 
 LOGIN_REDIRECT_URL = 'home'  # Redirect to home after login
 LOGOUT_REDIRECT_URL = 'home'  # Redirect to home after logout
@@ -71,7 +71,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'coresystemUI.wsgi.application'
+WSGI_APPLICATION = 'systemUI.wsgi.application'
 
 
 # Database
