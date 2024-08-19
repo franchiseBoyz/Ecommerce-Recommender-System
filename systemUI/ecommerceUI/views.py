@@ -1,4 +1,7 @@
 from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login
 from django.http import HttpResponse
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -89,3 +92,14 @@ def search_view(request):
 def home(request):
     top_rated_products = Product.objects.order_by('-product_rating')[:12]
     return render(request, 'products/home.html', {'top_rated_products': top_rated_products})
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            return redirect('home')  # Redirect to home page after signup
+    else:
+        form = UserCreationForm()
+    return render(request, 'products/signup.html', {'form': form})
