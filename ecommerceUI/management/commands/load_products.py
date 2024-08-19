@@ -7,7 +7,7 @@ class Command(BaseCommand):
     help = 'Load products from CSV'
 
     def handle(self, *args, **kwargs):
-        with open('../products.csv', newline='', encoding='utf-8') as csvfile:
+        with open('products.csv', newline='', encoding='utf-8') as csvfile:
             reader = csv.DictReader(csvfile)
             for row in reader:
                 Product.objects.create(
