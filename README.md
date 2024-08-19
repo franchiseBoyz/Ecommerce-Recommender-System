@@ -46,11 +46,70 @@ This project followed the CRISP-DM process. The CRISP-DM process is a data minin
 
 ## Setup Instructions
 
-* Install the required packages using pip:
+All these should be done in the terminal.
 
-    ```
-    pip install -r requirements.txt
-    ```
+1. Clone the Repository:
+
+    `git clone https://github.com/yourusername/your-repo-name.git`
+    
+     `cd your-repo-name`
+     
+2. Create and Activate a Virtual Environment:
+
+ `python3 -m venv env`
+ 
+ `source env/bin/activate`
+ 
+ On Windows, use `env\Scripts\activate`
+ 
+3. Create your branch and move into your branch
+
+  `git checkout -b branch-name`
+  
+4. Install Dependencies:
+
+Generate a `requirements.txt` file using this command
+
+   `pip freeze > requirements.txt`
+    
+   Install the required packages:
+    
+   `pip install -r requirements.txt`
+
+
+Backend Setup
+1. Set Up the Database:
+    Run the following commands to create and apply database migrations:
+    
+    `python manage.py makemigrations`
+    
+    `python manage.py migrate`
+    
+2. Create a Superuser:
+    Create a superuser to access the Django admin panel:
+    
+    `python manage.py createsuperuser`
+    
+3. Run the Development Server: 
+
+    `python manage.py runserver`    
+
+Frontend Setup
+If using plain HTML/CSS/JavaScript, ensure your static files are correctly placed in the `static` directory of your Django project.
+
+Running the Application
+1. Start the Backend Server:
+
+    `python manage.py runserver`
+    
+2. Access the Application:
+    Copy this url and paste it on the web browser `http://127.0.0.1:8000`
+
+Usage
+- Admin Panel: Access the Django admin panel at `http://127.0.0.1:8000/admin/` using the superuser credentials.
+- Task Management: Use the web interface to search and get recommendations for products.
+
+
 
 
 ## Our Data
@@ -93,7 +152,7 @@ These include:
 The best performing ones were tuned and ensembled to produce one model however this did not exhibit better performance. Further scaling of the dataset was done and cross validation included to improve the accuracy score  
 ## Deployment
 
-Included in the repository is a django user interface that serves as the rudimentary method through which users shall interact with our model. The interface was further deployed using [**Vercel**]
+Included in the repository is a django user interface that serves as the rudimentary method through which users shall interact with our model. The interface was further deployed using **vercel**
 
 ## Additional Documentation
 
