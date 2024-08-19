@@ -3,6 +3,7 @@ from django.contrib.auth import views as auth_views
 from . import views
 
 
+
 urlpatterns = [
     path('', views.home, name='home'),  # Home page
     path('search/', views.search_view, name='search'),  # Search results page
