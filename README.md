@@ -69,7 +69,7 @@ Here's a breakdown of some of the main columns we used in coming up with recomme
 
 
 There were a lot more columns in the data we scraped such as `sellername`, `sellerrating` and `highlights` that were dropped.
-We also conducted feature engineering on some columns to capture more information. All this is well documented in the included project [**writeup**](./writeup.docx).
+We also conducted feature engineering on some columns to capture more information. All this is well documented in the included project [**writeup**](https://github.com/Lynn-rose/Ecommerce-Recommender-System/blob/main/Documentation%20for%20Ecommerce%20recommendation%20System.docx.pdf).
 
 ## EDA
 
@@ -93,13 +93,13 @@ These include:
 The best performing ones were tuned and ensembled to produce one model however this did not exhibit better performance. Further scaling of the dataset was done and cross validation included to improve the accuracy score  
 ## Deployment
 
-Included in the repository is a django user interface that serves as the rudimentary method through which users shall interact with our model. The interface was further deployed using **Vercel**
+Included in the repository is a django user interface that serves as the rudimentary method through which users shall interact with our model. The interface was further deployed using [**Vercel**]
 
 ## Additional Documentation
 
 As mentioned before included in this repository is the complete project documentation. This includes:
-* [Non-technical presentation](./africura_presentation.pdf).
-* [Write-up documentation](./writeup.docx)
+* [Non-technical presentation](https://github.com/Lynn-rose/Ecommerce-Recommender-System/blob/main/Ecommerce%20Recommender%20System.pdf).
+* [Write-up documentation](https://github.com/Lynn-rose/Ecommerce-Recommender-System/blob/main/Documentation%20for%20Ecommerce%20recommendation%20System.docx.pdf).
 
 <!-- #endregion -->
 
