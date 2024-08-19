@@ -1,13 +1,13 @@
 {
     "builds": [{
-        "src": "systemUI/coresystemUI/wsgi.py",
+        "src": "coresystemUI/wsgi.py",
         "use": "@vercel/python",
         "config": { "maxlambdasize": "15mb", "runtime": "python3.9" }
     }],
     "routes": [
         {
             "src": "/(.*)",
-            "dest": "systemUI/coresystemUI/wsgi.py"
+            "dest": "coresystemUI/wsgi.py"
         }
     ]
 }
