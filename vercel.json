@@ -1,20 +1,13 @@
 {
-    "version": 2,
-    "functions": {
-        "coresystemUI/wsgi.py": {
-            "memory": 512,
-            "maxDuration": 10,
-            "runtime": "python3.9"
-        }
-    },
+    "builds": [{
+        "src": "coresystemUI/wsgi.py",
+        "use": "@vercel/python",
+        "config": { "maxlambdasize": "15mb", "runtime": "python3.9" }
+    }],
     "routes": [
-        {
-            "src": "/static/(.*)",
-            "dest": "/static/$1"
-        },
         {
             "src": "/(.*)",
             "dest": "coresystemUI/wsgi.py"
         }
     ]
-    }
+}
