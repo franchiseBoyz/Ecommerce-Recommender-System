@@ -1,20 +1,16 @@
 {
     "version": 2,
-    "builds": [
-        {
-            "src": "coresystemUI/wsgi.py",
-            "use": "@vercel/python",
-            "config": { "maxlambdasize": "15mb", "runtime": "python3.9" }
+    "functions": {
+        "coresystemUI/wsgi.py": {
+            "memory": 512,
+            "maxDuration": 10,
+            "runtime": "python3.9"
         }
-    ],
+    },
     "routes": [
         {
             "src": "/(.*)",
             "dest": "coresystemUI/wsgi.py"
         }
-    ],
-    "env": {
-        "DJANGO_SECRET_KEY": "@django_secret_key",
-        "DATABASE_URL": "@database_url"
-    }
+    ]
 }
