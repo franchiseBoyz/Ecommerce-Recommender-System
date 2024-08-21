@@ -1,10 +1,10 @@
 from django.db import models
 
 class Product(models.Model):
-    category_1 = models.CharField(max_length=255)
-    category_2 = models.CharField(max_length=255)
-    category_3 = models.CharField(max_length=255)
-    title = models.CharField(max_length=255)
+    category_1 = models.CharField(max_length=500)
+    category_2 = models.CharField(max_length=500)
+    category_3 = models.CharField(max_length=500)
+    title = models.CharField(max_length=600)
     product_rating = models.FloatField()
     selling_price = models.FloatField()
     mrp = models.FloatField()
