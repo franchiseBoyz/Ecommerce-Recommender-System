@@ -16,7 +16,7 @@
         }
 
         header {
-            background-color: linear-gradient(90deg, #2967c5, #0b1c4d);
+            background: linear-gradient(90deg, #2967c5, #0b1c4d);
             padding: 30px 20px;
             text-align: center;
             border-bottom: 1px solid #ddd;
@@ -26,7 +26,7 @@
         header h1 {
             margin: 0;
             font-size: 2.5em;
-            color: #333;
+            color: #fff;
             font-weight: 700;
         }
 
@@ -40,11 +40,12 @@
             border-radius: 30px;
             font-size: 1.1em;
             font-weight: bold;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .back-button:hover {
             background-color: #45A049;
+            transform: scale(1.05);
         }
 
         /* Main Content Styles */
@@ -56,10 +57,11 @@
 
         .catchy-message {
             text-align: center;
-            font-size: 1.8em;
+            font-size: 2em;
             margin-bottom: 20px;
             color: #4CAF50;
-            font-weight: 600;
+            font-weight: 700;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
         .recommendations-list {
@@ -78,6 +80,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid #ddd;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
         }
 
         .recommendation-item:hover {
@@ -85,21 +88,10 @@
             box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
         }
 
-        .product-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-info h2 {
-            margin: 0 0 10px 0;
-            font-size: 1.8em;
-            font-weight: 600;
+        .recommendation-item h2 {
+            font-size: 1.5em;
             color: #333;
+            margin: 0;
         }
 
         .product-info p {
@@ -111,12 +103,19 @@
         .product-rating {
             display: flex;
             align-items: center;
+            margin-bottom: 10px;
         }
 
         .product-rating span {
             margin-left: 10px;
             font-size: 1.1em;
             color: #333;
+        }
+
+        .product-info .price {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #4CAF50;
         }
 
         /* Footer Styles */
@@ -144,49 +143,39 @@
                 font-size: 1em;
                 padding: 10px 20px;
             }
-
-            .recommendation-item {
-                grid-template-columns: 1fr;
-            }
-
-            .product-image {
-                height: 180px;
-            }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Recommended Products</h1>
+        <h1>Recommended Products Just for You!</h1>
         <a href="{% url 'home' %}" class="back-button">Back to Home</a>
     </header>
 
     <main>
-        <p class="catchy-message">Discover Products Tailored Just for You!</p>
+        <p class="catchy-message">Explore Your Personalized Recommendations Below!</p>
         {% if recommendations %}
             <ul class="recommendations-list">
                 {% for item in recommendations %}
                     <li class="recommendation-item">
-                        <img src="{{ item.thumbnail_url }}" alt="{{ item.title }}" class="product-image">
                         <div class="product-info">
                             <h2>{{ item.title }}</h2>
                             <div class="product-rating">
                                 <p>Rating: ⭐ {{ item.product_rating }}</p>
                                 <span>({{ item.product_rating }} out of 5)</span>
                             </div>
-                            <p>Selling Price: <strong>KSH {{ item.selling_price }}</strong></p>
+                            <p class="price">Selling Price: <strong>KSH {{ item.selling_price }}</strong></p>
                         </div>
                     </li>
                 {% endfor %}
             </ul>
         {% else %}
-            <p>No recommendations found. Try searching for something else!</p>
+            <p class="catchy-message">No recommendations found. Try searching for something else!</p>
         {% endif %}
     </main>
 
     <footer>
-        <p>&copy; Ecommerce Recommender System. All rights reserved.</p>
+        <p>&copy; 2024 Ecommerce Recommender System. All rights reserved.</p>
     </footer>
-    
 </body>
 </html>
