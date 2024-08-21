@@ -87,7 +87,7 @@ DATABASES = {
     }
 }
 
-DATABASES['default'] = dj_database_url.parse('postgresql://troye:62AFQnB4NoaBCiL4G5COlaKplFV8LpfJ@dpg-cr2ij7jv2p9s73989mbg-a.oregon-postgres.render.com/ecommercedb_c2qj')
+DATABASES['default'] = dj_database_url.parse('postgresql://postgres:aOmNoLUgZHUoLcQoRyxcVbIJcQIeYWos@junction.proxy.rlwy.net:21030/railway')
 
 
 # Password validation
