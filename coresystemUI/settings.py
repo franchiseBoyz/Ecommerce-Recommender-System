@@ -132,3 +132,9 @@ STATICFILES_DIRS = [ os.path.join(BASE_DIR, 'static'),]
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://yourdomain.com',
+    'http://localhost:8000',
+    'https://web-production-4170.up.railway.app/'
+]
