@@ -7,6 +7,9 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity, linear_kernel
 from .models import Product
+from django.views.decorators.csrf import requires_csrf_token
+
+
 
 # Function to load and process product data from the CSV
 def load_products():
@@ -93,6 +96,8 @@ def home(request):
     top_rated_products = Product.objects.order_by('-product_rating')[:12]
     return render(request, 'products/home.html', {'top_rated_products': top_rated_products})
 
+
+@requires_csrf_token
 def signup(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
